@@ -1,0 +1,45 @@
+.head{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.gambar{
+    width: 110px;
+    height: 110px;
+    background-color: grey;
+    margin-left: 40px;
+}
+
+.text1{
+    margin-left: 50px;
+}
+
+.navbar-nav{
+    margin-left: 100px;
+}
+
+.btn{
+    margin-top: 20px;
+    margin-left: 1600px;
+}
+
+.card{
+    width: 1000px;
+    height: 400px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.card-body{
+    margin: auto;
+    font-size: 70px;
+    margin-top: 40px;
+}
+
+.card-body1{
+    width: 700px;
+    height: 400px;
+    margin: auto;
+    margin-top: 30px;
+}
