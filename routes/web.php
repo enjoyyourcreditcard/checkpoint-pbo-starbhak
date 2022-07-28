@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CatatanPerjalananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+})->middleware('auth');
+
+Route::get('/isidata', function () {
+    return view('isidata');
 });
 
 Route::get('login', function () {
@@ -23,3 +29,5 @@ Route::get('login', function () {
 Route::get('perjalanan', function () {
     return view('catatan-perjalanan');
 });
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
