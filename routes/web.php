@@ -23,5 +23,11 @@ Route::get('/isidata', function () {
     return view('isidata');
 });
 
+Route::get('login', function () {
+    return view('login');
+});
+Route::get('perjalanan', function () {
+    return view('catatan-perjalanan');
+});
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
