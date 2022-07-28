@@ -16,7 +16,9 @@ class CatatanPerjalananController extends Controller
      */
     public function index()
     {
-        
+        return view('catatanPerjalanan.index', [
+            'datas' => CatatanPerjalanan::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 
     /**
@@ -37,7 +39,18 @@ class CatatanPerjalananController extends Controller
      */
     public function store(StoreCatatanPerjalananRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required',
+            'jam' => 'required',
+            'suhu' => 'required',
+            'lokasi' => 'required'
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        CatatanPerjalanan::create($validatedData);
+
+        return redirect('/catatan-perjalanan');
     }
 
     /**
@@ -71,7 +84,18 @@ class CatatanPerjalananController extends Controller
      */
     public function update(UpdateCatatanPerjalananRequest $request, CatatanPerjalanan $catatanPerjalanan)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required',
+            'jam' => 'required',
+            'suhu' => 'required',
+            'lokasi' => 'required',
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        CatatanPerjalanan::where('id', $catatanPerjalanan->id)->update($validatedData);
+
+        return redirect('/catatan-perjalanan');
     }
 
     /**
@@ -82,6 +106,8 @@ class CatatanPerjalananController extends Controller
      */
     public function destroy(CatatanPerjalanan $catatanPerjalanan)
     {
-        //
+        CatatanPerjalanan::destroy($catatanPerjalanan->id);
+
+        return redirect('/catatan-perjalanan');
     }
 }

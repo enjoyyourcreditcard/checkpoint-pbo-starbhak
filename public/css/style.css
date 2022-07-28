@@ -9,6 +9,8 @@
     height: 110px;
     background-color: grey;
     margin-left: 40px;
+    border-radius: 100px;
+    object-fit: cover;
 }
 
 .text1{
@@ -19,10 +21,10 @@
     margin-left: 100px;
 }
 
-.btn{
+/* .btn{
     margin-top: 20px;
     margin-left: 1600px;
-}
+} */
 
 .card{
     width: 1000px;
@@ -33,7 +35,7 @@
 
 .card-body{
     margin: auto;
-    font-size: 70px;
+    /* font-size: 70px; */
     margin-top: 40px;
 }
 

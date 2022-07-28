@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
         CatatanPerjalanan::create([
             'user_id' => 1,
-            'tanggal' => '11-07-1998',
+            'tanggal' => '1998-12-01',
             'jam' => '15:30',
             'lokasi' => 'Grand Indonesia',
             'suhu' => '36',
