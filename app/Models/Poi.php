@@ -5,19 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CatatanPerjalanan extends Model
+class Poi extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
-    
+
     public function user () 
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function poi () 
+    public function catatan_perjalanan () 
     {
-        return $this->belongsTo(Poi::class, 'poi_id');
+        return $this->hasMany(CatatanPerjalanan::class);
+    }
+
+    public function rencana_perjalanan () 
+    {
+        return $this->hasMany(RencanaPerjalanan::class);
     }
 }
